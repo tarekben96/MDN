@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>استمارة اللياقة البدنية</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="navbar">
+    <span><strong>وزارة الدفاع</strong> - مكتب الرياضة</span>
+    <div>
+      <a href="/">الرئيسية</a>
+      <a href="/form" class="active">الاستمارة</a>
+      <a href="/guide">الدليل</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>استمارة قياس اللياقة البدنية</h2>
+    <form method="POST" action="/results">
+      <label>الاسم واللقب:</label>
+      <input type="text" name="name" required><br><br>
+
+      <label>الرتبة:</label>
+      <input type="text" name="rank"><br><br>
+
+      <label>الجنس:</label>
+      <select name="gender">
+        <option value="ذكر">ذكر</option>
+        <option value="أنثى">أنثى</option>
+      </select><br><br>
+
+      <label>السن:</label>
+      <input type="number" name="age" required><br><br>
+
+      <label>الطول (م):</label>
+      <input type="number" step="0.01" name="height" required><br><br>
+
+      <label>الوزن (كغ):</label>
+      <input type="number" step="0.1" name="weight" required><br><br>
+
+      <label>المسافة المقطوعة (12 دقيقة) بالمتر:</label>
+      <input type="number" name="distance" required><br><br>
+
+      <button type="submit">احسب النتائج</button>
+    </form>
+  </div>
+</body>
+</html>
